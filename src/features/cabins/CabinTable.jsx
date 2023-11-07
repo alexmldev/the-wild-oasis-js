@@ -59,4 +59,5 @@ function CabinTable() {
     </Table>
   );
 }
+
 export default CabinTable;
