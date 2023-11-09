@@ -4,6 +4,7 @@ import { formatCurrency } from "../../utils/helpers";
 import { useDeleteCabin } from "./useDeleteCabin";
 
 import styled from "styled-components";
+
 import CreateCabinForm from "./CreateCabinForm";
 
 const TableRow = styled.div`
