@@ -32,8 +32,8 @@ const StyledList = styled.ul`
   box-shadow: var(--shadow-md);
   border-radius: var(--border-radius-md);
 
-  right: ${(props) => props.position.x}px;
-  top: ${(props) => props.position.y}px;
+  right: ${props => props.position.x}px;
+  top: ${props => props.position.y}px;
 `;
 
 const StyledButton = styled.button`
@@ -60,3 +60,8 @@ const StyledButton = styled.button`
     transition: all 0.3s;
   }
 `;
+
+function Menus({ children }) {
+  return <div>{children}</div>;
+}
+export default Menus;
