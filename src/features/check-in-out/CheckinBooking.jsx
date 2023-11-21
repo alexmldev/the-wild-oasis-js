@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "../bookings/useBooking";
+import { formatCurrency } from "../../utils/helpers";
 
 import styled from "styled-components";
 
@@ -61,7 +62,8 @@ function CheckinBooking() {
           disabled={confirmPaid}
           id="confirm"
         >
-          I confirm that {guests.fullName} has paid the total amount
+          I confirm that {guests.fullName} has paid the total amount of{" "}
+          {formatCurrency(totalPrice)}
         </Checkbox>
       </Box>
 
