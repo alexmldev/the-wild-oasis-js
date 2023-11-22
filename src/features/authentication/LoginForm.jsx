@@ -4,17 +4,14 @@ import Form from "../../ui/Form";
 import FormRowVertical from "../../ui/FormRowVertical";
 import Input from "../../ui/Input";
 import Button from "../../ui/Button";
-import { login } from "../../services/apiAuth";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("alex@example.com");
+  const [password, setPassword] = useState("testtest");
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password) return;
-
-    login({ email, password });
   }
 
   return (
