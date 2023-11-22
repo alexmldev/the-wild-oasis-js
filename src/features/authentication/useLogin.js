@@ -15,7 +15,6 @@ export function useLogin() {
         password,
       }),
     onSuccess: user => {
-      console.log(user);
       navigate("/dashboard");
     },
     onError: err => {
