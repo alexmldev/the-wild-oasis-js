@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { format, isToday } from "date-fns";
 
 import { useCheckout } from "../check-in-out/useCheckout";
+import { useDeleteBooking } from "./useDeleteBooking";
 import { formatCurrency } from "../../utils/helpers";
 import { formatDistanceFromNow } from "../../utils/helpers";
 
@@ -18,6 +19,7 @@ import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
+import { de } from "date-fns/locale";
 
 const Cabin = styled.div`
   font-size: 1.6rem;
@@ -62,6 +64,7 @@ function BookingRow({
 }) {
   const navigate = useNavigate();
   const { checkout, isCheckingOut } = useCheckout();
+  const { deleteBooking, isDeleting } = useDeleteBooking();
 
   const statusToTagName = {
     unconfirmed: "blue",
@@ -127,7 +130,10 @@ function BookingRow({
           </Menus.List>
         </Menus.Menu>
         <Modal.Window name="delete">
-          <ConfirmDelete resourceName="booking" onConfirm={() => {}} />
+          <ConfirmDelete
+            resourceName="booking"
+            onConfirm={() => deleteBooking(bookingId)}
+          />
         </Modal.Window>
       </Modal>
     </Table.Row>
