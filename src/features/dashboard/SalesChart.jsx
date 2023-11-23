@@ -1,5 +1,7 @@
 import styled from "styled-components";
+
 import DashboardBox from "./DashboardBox";
+import Heading from "../../ui/Heading";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
