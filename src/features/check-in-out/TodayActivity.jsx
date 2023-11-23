@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Heading from "../../ui/Heading";
 import Row from "../../ui/Row";
 import Spinner from "../../ui/Spinner";
+import TodayItem from "./TodayItem";
 
 const StyledToday = styled.div`
   /* Box */
@@ -50,7 +51,11 @@ function TodayActivity() {
 
       {!isLoading ? (
         activities?.length > 0 ? (
-          <TodayList></TodayList>
+          <TodayList>
+            {activities.map(activity => (
+              <TodayItem activity={activity} key={activity.id} />
+            ))}
+          </TodayList>
         ) : (
           <NoActivity>No activity today...</NoActivity>
         )
