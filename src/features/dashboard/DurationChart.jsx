@@ -26,22 +26,22 @@ const startDataLight = [
   },
   {
     duration: "2 nights",
-    value: 0,
+    value: 3,
     color: "#f97316",
   },
   {
     duration: "3 nights",
-    value: 0,
+    value: 5,
     color: "#eab308",
   },
   {
     duration: "4-5 nights",
-    value: 0,
+    value: 4,
     color: "#84cc16",
   },
   {
     duration: "6-7 nights",
-    value: 0,
+    value: 7,
     color: "#22c55e",
   },
   {
@@ -51,7 +51,7 @@ const startDataLight = [
   },
   {
     duration: "15-21 nights",
-    value: 0,
+    value: 2,
     color: "#3b82f6",
   },
   {
@@ -108,7 +108,7 @@ function prepareData(startData, stays) {
   // A bit ugly code, but sometimes this is what it takes when working with real data 😅
 
   function incArrayValue(arr, field) {
-    return arr.map((obj) =>
+    return arr.map(obj =>
       obj.duration === field ? { ...obj, value: obj.value + 1 } : obj
     );
   }
@@ -126,7 +126,12 @@ function prepareData(startData, stays) {
       if (num >= 21) return incArrayValue(arr, "21+ nights");
       return arr;
     }, startData)
-    .filter((obj) => obj.value > 0);
+    .filter(obj => obj.value > 0);
 
   return data;
 }
+
+function DurationChart({ confirmedStays }) {
+  return <ChartBox>Chart</ChartBox>;
+}
+export default DurationChart;
