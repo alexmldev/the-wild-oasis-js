@@ -57,3 +57,13 @@ const colors = isDarkMode
       text: "#374151",
       background: "#fff",
     };
+
+function SalesChart() {
+  return (
+    <StyledSalesChart>
+      <Heading as="h2">Sales</Heading>
+    </StyledSalesChart>
+  );
+}
+
+export default SalesChart;
